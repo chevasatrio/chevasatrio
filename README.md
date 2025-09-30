@@ -19,5 +19,5 @@ Lifelong Learner, currently Undergraduate Information System at Telkom Universit
  
 ### <summary><strong>Let's connect!</strong></summary>
 <a href="www.linkedin.com/in/chevasatrio">
-  <img align="left" alt="LinkedIn" width="20px" src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/downloads/LinkedIn-Logos.zip"/>
+  <img align="left" alt="LinkedIn" width="5px" src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/downloads/LinkedIn-Logos.zip"/>
 </a>
