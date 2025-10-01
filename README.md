@@ -1,6 +1,6 @@
 # <summary><strong>Hi there :wave: , I'm Cheva!</strong></summary>
 Lifelong Learner, currently Undergraduate Information System at Telkom University Surabaya.
-<p align="left"> <img src="https://gifft.me/o/3d/w4wmqgupzomp7m5cb4x5h3ej)]https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTUydGZpdWxsNDhhZTM4Y3pqMTZ3Y2ExdnVvbjA2bWl5ZnI2N2w0dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gXr3j6YAClXFfZABn5/giphy.gif" />
+<p align="left"> <img width=200 src="Assets/Chibi.gif" />
 </p>
 
 
