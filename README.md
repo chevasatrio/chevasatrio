@@ -14,6 +14,7 @@ Lifelong Learner, currently Undergraduate Information System at Telkom Universit
     <img src="https://img.shields.io/badge/PostgreSQL-0000FF"/>
     <img src="https://img.shields.io/badge/Outsystems-CC0000"/>
     <img src="https://img.shields.io/badge/Jira-2F60FF"/>
+    <img src="https://img.shields.io/badge/Figma-7F00FF"/>
     
 </p
 ### <summary><strong>Yosh!</strong></summary>
