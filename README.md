@@ -12,14 +12,16 @@ Lifelong Learner, currently Undergraduate Information System at Telkom Universit
 ## Tools and Language :
 <p>
     <img src="https://img.shields.io/badge/VSCode-3F9FFF" />
-    <img src="https://img.shields.io/badge/Visual Paradigm-8A2BE2"/>
     <img src="https://img.shields.io/badge/JavaScript-FFF000"/>
     <img src="https://img.shields.io/badge/Laravel-FF2200"/>
+    <img src="https://img.shields.io/badge/ReactJS-FFFF33"/>
     <img src="https://img.shields.io/badge/MySQL-5AFAFF"/>
     <img src="https://img.shields.io/badge/PostgreSQL-0000FF"/>
-    <img src="https://img.shields.io/badge/Outsystems-CC0000"/>
     <img src="https://img.shields.io/badge/Jira-2F60FF"/>
     <img src="https://img.shields.io/badge/Figma-7F00FF"/>
+    <img src="https://img.shields.io/badge/Visual Paradigm-8A2BE2"/>
+    <img src="https://img.shields.io/badge/Outsystems-CC0000"/>
+    
     
 </p
 <p>
