@@ -36,13 +36,15 @@ Lifelong Learner, currently Undergraduate Information System at Telkom Universit
       <img height="200em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=chevasatrio&layout=compact&langs_count=10&theme=tokyonight"/>
 </div>
 
-[![GitHub Streak](https://streak-stats.demolab.com?user=chevasatrio&theme=gotham)](https://git.io/streak-stats)
-  
+<div align="center"> 
+    <a href="https://git.io/streak-stats">
+        <img src="https://streak-stats.demolab.com?user=chevasatrio&theme=gotham&locale=id&short_numbers=true&mode=weekly" alt="GitHub Streak" /></a>
+</div>
 </br>
-  
 <div align="center">
- 
+    
 [![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Thank+You+For+Visiting+My+Github;Thank+You+For+Visiting+My+Github)](https://git.io/typing-svg)
+
 </div>
     
 ## Let's connect!
