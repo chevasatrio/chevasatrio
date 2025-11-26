@@ -35,6 +35,8 @@ Lifelong Learner, currently Undergraduate Information System at Telkom Universit
       <img height="200cm" src="https://github-readme-stats.vercel.app/api?username=chevasatrio&show_icons=true&theme=tokyonight"/>
       <img height="200em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=chevasatrio&layout=compact&langs_count=10&theme=tokyonight"/>
 </div>
+
+[![GitHub Streak](https://streak-stats.demolab.com?user=chevasatrio&theme=gotham)](https://git.io/streak-stats)
   
 </br>
   
