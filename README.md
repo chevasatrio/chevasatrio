@@ -8,11 +8,11 @@ Lifelong Learner, currently Undergraduate Information System at Telkom Universit
 
 # About Me
 
-- **Location:** East Java, Indonesia.
+- **Domicile:**Surabaya, East Java, Indonesia.
 - **Education:** Undergraduate Information Systems at Telkom University Surabaya.
 - **Experience:** 4 years in Databases Management and Software developments.
 - **Design Skills:** Proficient in Figma Prototype, Canva, Adobe Illustration Design.
-- **Interests:** Software Quality Assurance, Cyber Security, Prototype Design Figma, ERP and Business Process.
+- **Interests:** Software Quality Assurance, Business Analyst, Cyber Security, Prototype Design Figma, ERP and System Enterprise Business Process.
 
 ## Tools and Language :
 <p>
