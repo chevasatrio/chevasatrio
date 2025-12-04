@@ -1,7 +1,12 @@
-# Hi there :wave: , I'm Cheva!
+# Hi there! :wave:
+<div align="center">
+    
+[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Hello.+I+am+Cheva+Satrio.;Welcome+to+my+GitHub.&color=FF2C2C)](https://git.io/typing-svg)
+
+</div>
 Lifelong Learner, currently Undergraduate Information System at Telkom University Surabaya.
 
-## About Me
+# About Me
 
 - **Location:** East Java, Indonesia.
 - **Education:** Undergraduate Information Systems at Telkom University Surabaya.
@@ -21,10 +26,10 @@ Lifelong Learner, currently Undergraduate Information System at Telkom Universit
     <img src="https://img.shields.io/badge/Figma-7F00FF"/>
     <img src="https://img.shields.io/badge/Visual Paradigm-8A2BE2"/>
     <img src="https://img.shields.io/badge/Outsystems-CC0000"/>
-    
-    
-</p
-<p>
+</p>
+
+[![My Skills](https://skillicons.dev/icons?i=vscode,js,laravel,react,mysql,postgresql,postman,figma,java,linux,bash,docker,bootstrap,cs,css,html,java,nodejs,npm,php,py,stackoverflow,selenium,vue,)](https://skillicons.dev)
+<p>  
 <div align="center">
     <img width=200 src="Assets/Chibi.gif">
 </div>
@@ -33,7 +38,7 @@ Lifelong Learner, currently Undergraduate Information System at Telkom Universit
 <div align="center"> 
   <a href="https://github.com/chevasatrio">
       <img height="200cm" src="https://github-readme-stats.vercel.app/api?username=chevasatrio&show_icons=true&theme=tokyonight"/>
-      <img height="200em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=chevasatrio&layout=compact&langs_count=10&theme=tokyonight"/>
+      <img height="200em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=chevasatrio&layout=compact&langs_count=10&tokyonight"/>
 </div>
 
 <div align="center"> 
@@ -43,7 +48,7 @@ Lifelong Learner, currently Undergraduate Information System at Telkom Universit
 </br>
 <div align="center">
     
-[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Thank+You+For+Visiting+My+Github;Thank+You+For+Visiting+My+Github)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Thank+You+For+Visiting+My+Github)](https://git.io/typing-svg)
 
 </div>
     
