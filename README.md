@@ -10,7 +10,7 @@ Lifelong Learner, currently Undergraduate Information System at Telkom Universit
 
 - **Location:** East Java, Indonesia.
 - **Education:** Undergraduate Information Systems at Telkom University Surabaya.
-- **Experience:** 3 years in Databases Management and Software developments.
+- **Experience:** 4 years in Databases Management and Software developments.
 - **Design Skills:** Proficient in Figma Prototype, Canva, Adobe Illustration Design.
 - **Interests:** Software Quality Assurance, Cyber Security, Prototype Design Figma, ERP and Business Process.
 
@@ -30,9 +30,6 @@ Lifelong Learner, currently Undergraduate Information System at Telkom Universit
 
 [![My Skills](https://skillicons.dev/icons?i=vscode,js,laravel,react,mysql,postgresql,postman,figma,java,linux,bash,docker,bootstrap,cs,css,html,java,nodejs,npm,php,py,stackoverflow,selenium,vue,)](https://skillicons.dev)
 <p>  
-<div align="center">
-    <img width=200 src="Assets/Chibi.gif">
-</div>
 </p>
 
 <div align="center"> 
