@@ -28,7 +28,7 @@ Lifelong Learner, currently Undergraduate Information System at Telkom Universit
     <img src="https://img.shields.io/badge/Outsystems-CC0000"/>
 </p>
 
-[![My Skills](https://skillicons.dev/icons?i=vscode,js,laravel,react,mysql,postgresql,postman,figma,java,linux,bash,docker,bootstrap,cs,css,html,java,nodejs,npm,php,py,stackoverflow,selenium,vue,)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=vscode,js,laravel,react,mysql,postgresql,postman,figma,java,linux,bash,docker,bootstrap,cs,css,html,java,nodejs,npm,php,py,stackoverflow,selenium,vue,ts)](https://skillicons.dev)
 <p>  
 </p>
 
