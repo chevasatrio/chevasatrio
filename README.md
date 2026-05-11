@@ -31,13 +31,15 @@ Lifelong Learner, currently Undergraduate Information System at Telkom Universit
 [![My Skills](https://skillicons.dev/icons?i=vscode,js,laravel,react,mysql,postgresql,postman,figma,java,linux,bash,docker,bootstrap,cs,css,html,java,nodejs,npm,php,py,stackoverflow,selenium,vue,ts)](https://skillicons.dev)
 <p>  
 </p>
-
-<div align="center"> 
-  <a href="https://github.com/chevasatrio">
-      <img height="200cm" src="https://github-readme-stats.vercel.app/api?username=chevasatrio&show_icons=true&theme=tokyonight"/>
-      <img height="200em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=chevasatrio&layout=compact&langs_count=10&theme=tokyonight"/>
+</br>
+<div align="center">
+<a href="https://github.com/chevasatrio/github-readme-stats">
+  <img height=200 align="center" src="https://github-readme-stats-fast.vercel.app/api?username=chevasatrio&theme=blue-green&rank_icon=github&show_icons=true" />
+</a>
+<a href="https://github.com/chevasatrio">
+  <img height=200 align="center" src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=chevasatrio&layout=compact&theme=blue-green&exclude_repo=github-readme-stats,chevasatrio.github.io" />
+</a>
 </div>
-
 <div align="center"> 
     <a href="https://git.io/streak-stats">
         <img src="https://streak-stats.demolab.com?user=chevasatrio&theme=gotham&locale=id&short_numbers=true&mode=weekly" alt="GitHub Streak" /></a>
