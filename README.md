@@ -19,7 +19,7 @@
 
 const cheva = {
   name: "Cheva Satrio",
-  from: "Surabaya, East Java 🇮🇩",
+  from: "Malang, East Java 🇮🇩",
   study: "Information Systems @ Telkom University Surabaya",
 
   // been doing this for a while now
