@@ -68,8 +68,6 @@ const cheva = {
 
 ---
 
-## 📊 GitHub Statistics
-
 <div align="center">
 
 <a href="https://github.com/chevasatrio">
@@ -94,8 +92,6 @@ const cheva = {
 </div>
 
 ---
-
-## 🐍 Contribution Snake
 
 <div align="center">
 
