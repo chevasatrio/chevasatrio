@@ -12,7 +12,7 @@
 
 ---
 
-## 🧑‍💻 About Me
+## About Me
 
 ```ts
 // who am i? let me introduce myself 👋
@@ -44,7 +44,7 @@ const cheva = {
 
 ---
 
-## 🛠️ Tech Stack & Tools
+## Tech Stack & Tools
 
 <div align="center">
 
@@ -101,7 +101,7 @@ const cheva = {
 
 ---
 
-## 📈 Activity Graph
+## Activity Graph
 
 <div align="center">
 
@@ -111,7 +111,7 @@ const cheva = {
 
 ---
 
-## 💡 A Quote I Live By
+## A Quote I Live By
 
 <div align="center">
 
@@ -121,7 +121,7 @@ const cheva = {
 
 ---
 
-## 🤝 Let's Connect!
+## Let's Connect!
 
 <div align="center">
 
