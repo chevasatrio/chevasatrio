@@ -50,19 +50,19 @@ const cheva = {
 
 **Languages**
 
-[![Skills](https://skillicons.dev/icons?i=php,js,ts,python,java,cs&theme=dark)](https://skillicons.dev)
+[![Skills](https://skillicons.dev/icons?i=php,js,ts,python,go,cs,&theme=dark)](https://skillicons.dev)
 
 **Frameworks & Libraries**
 
-[![Skills](https://skillicons.dev/icons?i=laravel,react,vue,nodejs,bootstrap&theme=dark)](https://skillicons.dev)
+[![Skills](https://skillicons.dev/icons?i=laravel,react,vue,nodejs,nextjs,nestjs,bootstrap&theme=dark)](https://skillicons.dev)
 
 **Database & DevOps**
 
-[![Skills](https://skillicons.dev/icons?i=mysql,postgresql,docker,linux,bash&theme=dark)](https://skillicons.dev)
+[![Skills](https://skillicons.dev/icons?i=mysql,postgresql,supabase,docker,linux,vercel,prisma&theme=dark)](https://skillicons.dev)
 
 **Design & Tools**
 
-[![Skills](https://skillicons.dev/icons?i=figma,postman,selenium,vscode,npm&theme=dark)](https://skillicons.dev)
+[![Skills](https://skillicons.dev/icons?i=figma,postman,selenium,vscode,git,bash&theme=dark)](https://skillicons.dev)
 
 </div>
 
