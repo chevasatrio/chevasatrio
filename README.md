@@ -54,11 +54,11 @@ const cheva = {
 
 **Frameworks & Libraries**
 
-[![Skills](https://skillicons.dev/icons?i=laravel,react,vue,nodejs,nextjs,nestjs,bootstrap&theme=dark)](https://skillicons.dev)
+[![Skills](https://skillicons.dev/icons?i=laravel,react,vue,nodejs,nextjs,nestjs,tailwind,bootstrap&theme=dark)](https://skillicons.dev)
 
 **Database & DevOps**
 
-[![Skills](https://skillicons.dev/icons?i=mysql,postgresql,supabase,docker,linux,vercel,prisma,graphql&theme=dark)](https://skillicons.dev)
+[![Skills](https://skillicons.dev/icons?i=mysql,postgresql,supabase,docker,linux,vercel,prisma,graphql,rabbitmq,kubernetes,azure&theme=dark)](https://skillicons.dev)
 
 **Design & Tools**
 
