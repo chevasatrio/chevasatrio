@@ -50,7 +50,7 @@ const cheva = {
 
 **Languages**
 
-[![Skills](https://skillicons.dev/icons?i=php,js,ts,python,go,cs,&theme=dark)](https://skillicons.dev)
+[![Skills](https://skillicons.dev/icons?i=php,js,ts,python,go,css,java&theme=dark)](https://skillicons.dev)
 
 **Frameworks & Libraries**
 
@@ -58,7 +58,7 @@ const cheva = {
 
 **Database & DevOps**
 
-[![Skills](https://skillicons.dev/icons?i=mysql,postgresql,supabase,docker,linux,vercel,prisma&theme=dark)](https://skillicons.dev)
+[![Skills](https://skillicons.dev/icons?i=mysql,postgresql,supabase,docker,linux,vercel,prisma,graphql&theme=dark)](https://skillicons.dev)
 
 **Design & Tools**
 
