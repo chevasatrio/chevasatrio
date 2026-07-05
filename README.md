@@ -6,7 +6,7 @@
 
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=FF2C2C&center=true&vCenter=true&width=600&lines=Hello%2C+World!+I'm+Cheva+Satrio+%F0%9F%91%8B;Information+Systems+%40+Telkom+University;Back-End+Developer+%7C+QA+Engineer;Building+things+that+actually+work+%F0%9F%9A%80)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=FF2C2C&center=true&vCenter=true&width=600&lines=Hello%2C+World!+I'm+Cheva+Satrio+%F0%9F%91%8B;Information+Systems+%40+Telkom+University;Software+Developer+%7C+QA+Engineer;Building+things+that+actually+work+%F0%9F%9A%80)](https://git.io/typing-svg)
 
 </div>
 
@@ -27,15 +27,15 @@ const cheva = {
 
   // what gets me excited
   passions: [
-    "Back-End Development 🛠️",
-    "Software Quality Assurance 🧪",
-    "Business Analyst 📊",
-    "Figma Prototyping 🎨",
-    "ERP & Enterprise Systems ⚙️",
+    "Back-End / Fullstack Development",
+    "Software Quality Assurance",
+    "Business Analyst",
+    "Figma Prototyping",
+    "ERP & Enterprise Systems",
   ],
 
   // always leveling up
-  currentlyLearning: "diving deeper into SQA & ERP systems",
+  currentlyLearning: "diving deeper into SQA and ERP systems",
 
   // life philosophy
   motto: "build it right, test it well, ship it clean 🚀",
