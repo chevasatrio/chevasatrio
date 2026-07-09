@@ -1,25 +1,73 @@
-name: Generate Snake
+name: Update Profile Cards
 
 on:
   schedule:
-    - cron: "0 */12 * * *"
-  workflow_dispatch:
-
-permissions:
-  contents: write
+    - cron: "0 18 * * *"   # tiap hari jam 01:00 WIB (18:00 UTC)
+  workflow_dispatch:        # bisa trigger manual dari tab Actions
 
 jobs:
-  build:
+  update-stats:
     runs-on: ubuntu-latest
     steps:
-      - uses: Platane/snk@v3
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Buat folder assets
+        run: mkdir -p assets
+
+      - name: Ambil kartu Stats
+        run: |
+          curl -sL "https://github-readme-stats.vercel.app/api?username=chevasatrio&theme=github_dark_dimmed&rank_icon=github&show_icons=true&hide_border=true&bg_color=0D1117&title_color=FF2C2C&icon_color=FF2C2C&text_color=E6EDF3" \
+          -o assets/stats.svg
+
+      - name: Ambil kartu Top Languages
+        run: |
+          curl -sL "https://github-readme-stats.vercel.app/api/top-langs/?username=chevasatrio&layout=compact&theme=github_dark_dimmed&hide_border=true&bg_color=0D1117&title_color=FF2C2C&text_color=E6EDF3&exclude_repo=github-readme-stats,chevasatrio.github.io" \
+          -o assets/top-langs.svg
+
+      - name: Ambil kartu Trophy
+        run: |
+          curl -sL "https://github-trophies.vercel.app/?username=chevasatrio&theme=darkhub&no-frame=true&no-bg=true&margin-w=8&column=7" \
+          -o assets/trophy.svg
+
+      - name: Ambil Activity Graph
+        run: |
+          curl -sL "https://github-readme-activity-graph.vercel.app/graph?username=chevasatrio&theme=github-dark&bg_color=0D1117&color=FF2C2C&line=FF2C2C&point=ffffff&hide_border=true" \
+          -o assets/activity-graph.svg
+
+      - name: Validasi hasil download (jangan commit kalau gagal/kosong)
+        run: |
+          for f in assets/*.svg; do
+            if [ ! -s "$f" ] || ! grep -q "<svg" "$f"; then
+              echo "❌ $f gagal diambil atau bukan SVG valid, batalkan commit."
+              exit 1
+            fi
+          done
+          echo "✅ Semua file valid."
+
+      - name: Commit & push jika ada perubahan
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update stats cards [automated]"
+          file_pattern: "assets/*.svg"
+
+  update-snake:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Generate snake animation
+        uses: Platane/snk@v3
         with:
           github_user_name: chevasatrio
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      - uses: crazy-max/ghaction-github-pages@v4
+      - name: Push ke branch output
+        uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
           build_dir: dist
