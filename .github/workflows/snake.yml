@@ -19,12 +19,12 @@ jobs:
 
       - name: Ambil kartu Stats
         run: |
-          curl -sL "https://github-readme-stats.vercel.app/api?username=chevasatrio&theme=github_dark_dimmed&rank_icon=github&show_icons=true&hide_border=true&bg_color=0D1117&title_color=FF2C2C&icon_color=FF2C2C&text_color=E6EDF3" \
+          curl -sL "https://github-readme-stats-ivory-one-kzkgvaned5.vercel.app/api?username=chevasatrio&theme=github_dark_dimmed&rank_icon=github&show_icons=true&hide_border=true&bg_color=0D1117&title_color=FF2C2C&icon_color=FF2C2C&text_color=E6EDF3" \
           -o assets/stats.svg
 
       - name: Ambil kartu Top Languages
         run: |
-          curl -sL "https://github-readme-stats.vercel.app/api/top-langs/?username=chevasatrio&layout=compact&theme=github_dark_dimmed&hide_border=true&bg_color=0D1117&title_color=FF2C2C&text_color=E6EDF3&exclude_repo=github-readme-stats,chevasatrio.github.io" \
+          curl -sL "https://github-readme-stats-ivory-one-kzkgvaned5.vercel.app/api/top-langs/?username=chevasatrio&layout=compact&theme=github_dark_dimmed&hide_border=true&bg_color=0D1117&title_color=FF2C2C&text_color=E6EDF3&exclude_repo=github-readme-stats,chevasatrio.github.io" \
           -o assets/top-langs.svg
 
       - name: Ambil kartu Trophy
