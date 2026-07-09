@@ -41,7 +41,10 @@ jobs:
         run: |
           for f in assets/*.svg; do
             if [ ! -s "$f" ] || ! grep -q "<svg" "$f"; then
-              echo "❌ $f gagal diambil atau bukan SVG valid, batalkan commit."
+              echo "❌ $f gagal diambil atau bukan SVG valid. Isi filenya:"
+              echo "---"
+              cat "$f"
+              echo "---"
               exit 1
             fi
           done
