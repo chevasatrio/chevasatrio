@@ -71,10 +71,11 @@ const cheva = {
 <div align="center">
 
 <a href="https://github.com/chevasatrio">
-  <img height="180" src="https://github-readme-stats.vercel.app/api?username=chevasatrio&theme=github_dark_dimmed&rank_icon=github&show_icons=true&hide_border=true&bg_color=0D1117&title_color=FF2C2C&icon_color=FF2C2C&text_color=E6EDF3" />
+  <img height="180" src="https://raw.githubusercontent.com/chevasatrio/chevasatrio/main/assets/stats.svg" />
 </a>
+
 <a href="https://github.com/chevasatrio">
-  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=chevasatrio&layout=compact&theme=github_dark_dimmed&hide_border=true&bg_color=0D1117&title_color=FF2C2C&text_color=E6EDF3&exclude_repo=github-readme-stats,chevasatrio.github.io" />
+  <img height="180" src="https://raw.githubusercontent.com/chevasatrio/chevasatrio/main/assets/top-langs.svg" />
 </a>
 
 </div>
@@ -87,7 +88,7 @@ const cheva = {
 
 <div align="center">
 
-<img src="https://github-trophies.vercel.app/?username=chevasatrio&theme=darkhub&no-frame=true&no-bg=true&margin-w=8&column=7" alt="GitHub Trophies" />
+<img src="https://raw.githubusercontent.com/chevasatrio/chevasatrio/main/assets/trophy.svg" alt="GitHub Trophies" />
   
 </div>
 
