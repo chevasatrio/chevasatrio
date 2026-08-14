@@ -82,7 +82,9 @@ const cheva = {
 
 <div align="center">
 
-[![GitHub Streak](https://streak-stats.demolab.com?user=chevasatrio&theme=github-dark-blue&hide_border=true&background=0D1117&ring=FF2C2C&fire=FF2C2C&currStreakLabel=FF2C2C&locale=id&short_numbers=true&mode=weekly)](https://git.io/streak-stats)
+<a href="https://github.com/chevasatrio">
+  <img src="https://raw.githubusercontent.com/chevasatrio/chevasatrio/main/assets/streak.svg" alt="GitHub Streak" />
+</a>
 
 </div>
 
@@ -106,7 +108,7 @@ const cheva = {
 
 <div align="center">
 
-[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=chevasatrio&theme=github-dark&bg_color=0D1117&color=FF2C2C&line=FF2C2C&point=ffffff&hide_border=true)](https://github.com/Ashutosh00710/github-readme-activity-graph)
+<img src="https://raw.githubusercontent.com/chevasatrio/chevasatrio/main/assets/activity-graph.svg" alt="Activity Graph" width="100%" />
 
 </div>
 
