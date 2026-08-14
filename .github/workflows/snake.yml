@@ -40,6 +40,11 @@ jobs:
           curl -sL "https://github-readme-activity-graph.vercel.app/graph?username=chevasatrio&theme=github-dark&bg_color=0D1117&color=FF2C2C&line=FF2C2C&point=ffffff&hide_border=true" \
           -o assets/activity-graph.svg
 
+      - name: Ambil kartu Streak
+        run: |
+          curl -sL "https://streak-stats.demolab.com?user=chevasatrio&theme=github-dark-blue&hide_border=true&background=0D1117&ring=FF2C2C&fire=FF2C2C&currStreakLabel=FF2C2C&locale=id&short_numbers=true&mode=weekly" \
+          -o assets/streak.svg
+
       - name: Validasi hasil download (jangan commit kalau gagal/kosong)
         run: |
           for f in assets/*.svg; do
