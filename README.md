@@ -70,26 +70,6 @@ const cheva = {
 
 <div align="center">
 
-<a href="https://github.com/chevasatrio">
-  <img height="180" src="https://raw.githubusercontent.com/chevasatrio/chevasatrio/main/assets/stats.svg" />
-</a>
-
-<a href="https://github.com/chevasatrio">
-  <img height="180" src="https://raw.githubusercontent.com/chevasatrio/chevasatrio/main/assets/top-langs.svg" />
-</a>
-
-</div>
-
-<div align="center">
-
-<a href="https://github.com/chevasatrio">
-  <img src="https://raw.githubusercontent.com/chevasatrio/chevasatrio/main/assets/streak.svg" alt="GitHub Streak" />
-</a>
-
-</div>
-
-<div align="center">
-
 <img src="https://raw.githubusercontent.com/chevasatrio/chevasatrio/main/assets/trophy.svg" alt="GitHub Trophies" />
   
 </div>
