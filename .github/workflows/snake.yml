@@ -3,7 +3,7 @@ name: Update Profile Cards
 on:
   schedule:
     - cron: "0 18 * * *"   # tiap hari jam 01:00 WIB (18:00 UTC)
-  workflow_dispatch:        # bisa trigger manual dari tab Actions
+  workflow_dispatch:        
 
 jobs:
   update-stats:
@@ -18,45 +18,73 @@ jobs:
 
       - name: Buat folder assets
         run: mkdir -p assets
+      - name: Setup fungsi fetch aman
+        run: |
+          cat << 'EOF' > fetch_safe.sh
+          #!/bin/bash
+          # Usage: ./fetch_safe.sh "<url>" "<output_file>" "<nama_kartu>"
+          URL="$1"
+          OUT="$2"
+          LABEL="$3"
+          MAX_RETRY=4
+          SLEEP=15
+
+          for i in $(seq 1 $MAX_RETRY); do
+            curl -sL "$URL" -o "$OUT.tmp"
+
+            if [ ! -s "$OUT.tmp" ]; then
+              echo "⚠️  [$LABEL] percobaan $i: respons kosong."
+            elif ! grep -q "<svg" "$OUT.tmp"; then
+              echo "⚠️  [$LABEL] percobaan $i: bukan SVG valid."
+            elif grep -qiE "something went wrong|rate limit|failed to retrieve|sorry.*error|api issue" "$OUT.tmp"; then
+              echo "⚠️  [$LABEL] percobaan $i: server mengembalikan halaman error (rate limit)."
+            else
+              mv "$OUT.tmp" "$OUT"
+              echo "✅ [$LABEL] berhasil diambil."
+              exit 0
+            fi
+
+            if [ "$i" -lt "$MAX_RETRY" ]; then
+              echo "   menunggu ${SLEEP}s sebelum coba lagi..."
+              sleep $SLEEP
+            fi
+          done
+
+          echo "❌ [$LABEL] gagal setelah $MAX_RETRY percobaan. File lama TIDAK ditimpa."
+          rm -f "$OUT.tmp"
+          exit 1
+          EOF
+          chmod +x fetch_safe.sh
 
       - name: Ambil kartu Stats
         run: |
-          curl -sL "https://github-readme-stats-ivory-one-kzkgvaned5.vercel.app/api?username=chevasatrio&theme=github_dark_dimmed&rank_icon=github&show_icons=true&hide_border=true&bg_color=0D1117&title_color=FF2C2C&icon_color=FF2C2C&text_color=E6EDF3" \
-          -o assets/stats.svg
+          ./fetch_safe.sh \
+            "https://github-readme-stats-ivory-one-kzkgvaned5.vercel.app/api?username=chevasatrio&theme=github_dark_dimmed&rank_icon=github&show_icons=true&hide_border=true&bg_color=0D1117&title_color=FF2C2C&icon_color=FF2C2C&text_color=E6EDF3" \
+            "assets/stats.svg" "Stats"
 
       - name: Ambil kartu Top Languages
         run: |
-          curl -sL -H "Cache-Control: no-cache" \
-          "https://github-readme-stats-ivory-one-kzkgvaned5.vercel.app/api/top-langs/?username=chevasatrio&layout=compact&theme=github_dark_dimmed&hide_border=true&bg_color=0D1117&title_color=FF2C2C&text_color=E6EDF3&exclude_repo=github-readme-stats,chevasatrio.github.io&cache_seconds=1&_=$(date +%s)" \
-          -o assets/top-langs.svg
+          ./fetch_safe.sh \
+            "https://github-readme-stats-ivory-one-kzkgvaned5.vercel.app/api/top-langs/?username=chevasatrio&layout=compact&theme=github_dark_dimmed&hide_border=true&bg_color=0D1117&title_color=FF2C2C&text_color=E6EDF3&exclude_repo=github-readme-stats,chevasatrio.github.io&cache_seconds=1&_=$(date +%s)" \
+            "assets/top-langs.svg" "Top Languages"
 
       - name: Ambil kartu Trophy
         run: |
-          curl -sL "https://github-trophies.vercel.app/?username=chevasatrio&theme=darkhub&no-frame=true&no-bg=true&margin-w=8&column=7" \
-          -o assets/trophy.svg
+          ./fetch_safe.sh \
+            "https://github-trophies.vercel.app/?username=chevasatrio&theme=darkhub&no-frame=true&no-bg=true&margin-w=8&column=7" \
+            "assets/trophy.svg" "Trophy"
 
       - name: Ambil Activity Graph
         run: |
-          curl -sL "https://github-readme-activity-graph.vercel.app/graph?username=chevasatrio&theme=github-dark&bg_color=0D1117&color=FF2C2C&line=FF2C2C&point=ffffff&hide_border=true" \
-          -o assets/activity-graph.svg
+          ./fetch_safe.sh \
+            "https://github-readme-activity-graph.vercel.app/graph?username=chevasatrio&theme=github-dark&bg_color=0D1117&color=FF2C2C&line=FF2C2C&point=ffffff&hide_border=true" \
+            "assets/activity-graph.svg" "Activity Graph"
 
       - name: Ambil kartu Streak
         run: |
-          curl -sL "https://streak-stats.demolab.com?user=chevasatrio&theme=github-dark-blue&hide_border=true&background=0D1117&ring=FF2C2C&fire=FF2C2C&currStreakLabel=FF2C2C&locale=id&short_numbers=true&mode=weekly" \
-          -o assets/streak.svg
-
-      - name: Validasi hasil download (jangan commit kalau gagal/kosong)
-        run: |
-          for f in assets/*.svg; do
-            if [ ! -s "$f" ] || ! grep -q "<svg" "$f"; then
-              echo "❌ $f gagal diambil atau bukan SVG valid. Isi filenya:"
-              echo "---"
-              cat "$f"
-              echo "---"
-              exit 1
-            fi
-          done
-          echo "✅ Semua file valid."
+          ./fetch_safe.sh \
+            "https://streak-stats.demolab.com?user=chevasatrio&theme=github-dark-blue&hide_border=true&background=0D1117&ring=FF2C2C&fire=FF2C2C&currStreakLabel=FF2C2C&locale=id&short_numbers=true&mode=weekly" \
+            "assets/streak.svg" "Streak"
 
       - name: Commit & push jika ada perubahan
         uses: stefanzweifel/git-auto-commit-action@v5
