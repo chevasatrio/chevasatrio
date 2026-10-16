@@ -66,12 +66,13 @@ jobs:
           done
 
       # continue-on-error: satu API gagal TIDAK menghentikan step lain maupun auto-commit
+      # Dibuat langsung di Actions (data dari GitHub GraphQL API), tanpa host pihak ketiga
       - name: Activity Graph
         continue-on-error: true
-        run: |
-          ./fetch_safe.sh \
-            "https://github-readme-activity-graph.vercel.app/graph?username=chevasatrio&theme=github-compact&bg_color=0D1117&color=FF2C2C&line=FF2C2C&point=FFFFFF&area=true&area_color=FF2C2C&hide_border=true&custom_title=Contribution%20Graph" \
-            "assets/activity-graph.svg" "Activity Graph"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USER: chevasatrio
+        run: python3 .github/scripts/activity_graph.py
 
       - name: Trophy
         continue-on-error: true
