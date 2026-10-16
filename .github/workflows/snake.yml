@@ -3,7 +3,11 @@ name: Update Profile Cards
 on:
   schedule:
     - cron: "0 18 * * *"   # tiap hari jam 01:00 WIB (18:00 UTC)
-  workflow_dispatch:        
+  workflow_dispatch:
+
+concurrency:
+  group: update-profile-cards
+  cancel-in-progress: true
 
 jobs:
   update-stats:
@@ -16,81 +20,82 @@ jobs:
         with:
           ref: main
 
-      - name: Buat folder assets
-        run: mkdir -p assets
-      - name: Setup fungsi fetch aman
+      - name: Siapkan fungsi fetch aman
         run: |
+          mkdir -p assets
           cat << 'EOF' > fetch_safe.sh
           #!/bin/bash
           # Usage: ./fetch_safe.sh "<url>" "<output_file>" "<nama_kartu>"
-          URL="$1"
-          OUT="$2"
-          LABEL="$3"
-          MAX_RETRY=4
-          SLEEP=15
+          URL="$1"; OUT="$2"; LABEL="$3"
+          MAX_RETRY=4; SLEEP=20
 
           for i in $(seq 1 $MAX_RETRY); do
-            curl -sL "$URL" -o "$OUT.tmp"
+            CODE=$(curl -sL --max-time 60 -A "Mozilla/5.0 (profile-readme-updater)" \
+              -w "%{http_code}" "$URL" -o "$OUT.tmp")
 
-            if [ ! -s "$OUT.tmp" ]; then
+            if [ "$CODE" != "200" ]; then
+              echo "⚠️  [$LABEL] percobaan $i: HTTP $CODE."
+            elif [ ! -s "$OUT.tmp" ]; then
               echo "⚠️  [$LABEL] percobaan $i: respons kosong."
             elif ! grep -q "<svg" "$OUT.tmp"; then
               echo "⚠️  [$LABEL] percobaan $i: bukan SVG valid."
-            elif grep -qiE "something went wrong|rate limit|failed to retrieve|sorry.*error|api issue" "$OUT.tmp"; then
-              echo "⚠️  [$LABEL] percobaan $i: server mengembalikan halaman error (rate limit)."
+            elif grep -qiE "something went wrong|rate limit|failed to retrieve|api issue|deploy own instance|not found" "$OUT.tmp"; then
+              echo "⚠️  [$LABEL] percobaan $i: server mengembalikan kartu error."
             else
               mv "$OUT.tmp" "$OUT"
               echo "✅ [$LABEL] berhasil diambil."
               exit 0
             fi
-
-            if [ "$i" -lt "$MAX_RETRY" ]; then
-              echo "   menunggu ${SLEEP}s sebelum coba lagi..."
-              sleep $SLEEP
-            fi
+            [ "$i" -lt "$MAX_RETRY" ] && sleep $SLEEP
           done
 
-          echo "❌ [$LABEL] gagal setelah $MAX_RETRY percobaan. File lama TIDAK ditimpa."
+          echo "❌ [$LABEL] gagal setelah $MAX_RETRY percobaan. File lama dipertahankan."
           rm -f "$OUT.tmp"
           exit 1
           EOF
           chmod +x fetch_safe.sh
 
-      - name: Ambil kartu Stats
+      # Hapus kartu error lama yang sempat ter-commit, supaya tidak dianggap "file lama yang valid"
+      - name: Bersihkan kartu error lama
+        run: |
+          for f in assets/*.svg; do
+            if grep -qiE "something went wrong|failed to retrieve|rate limit" "$f"; then
+              echo "🧹 hapus $f (isinya halaman error)"
+              rm -f "$f"
+            fi
+          done
+
+      # continue-on-error: satu API gagal TIDAK menghentikan step lain maupun auto-commit
+      - name: Activity Graph
+        continue-on-error: true
         run: |
           ./fetch_safe.sh \
-            "https://github-readme-stats-ivory-one-kzkgvaned5.vercel.app/api?username=chevasatrio&theme=github_dark_dimmed&rank_icon=github&show_icons=true&hide_border=true&bg_color=0D1117&title_color=FF2C2C&icon_color=FF2C2C&text_color=E6EDF3" \
-            "assets/stats.svg" "Stats"
+            "https://github-readme-activity-graph.vercel.app/graph?username=chevasatrio&theme=github-compact&bg_color=0D1117&color=FF2C2C&line=FF2C2C&point=FFFFFF&area=true&area_color=FF2C2C&hide_border=true&custom_title=Contribution%20Graph" \
+            "assets/activity-graph.svg" "Activity Graph"
 
-      - name: Ambil kartu Top Languages
-        run: |
-          ./fetch_safe.sh \
-            "https://github-readme-stats-ivory-one-kzkgvaned5.vercel.app/api/top-langs/?username=chevasatrio&layout=compact&theme=github_dark_dimmed&hide_border=true&bg_color=0D1117&title_color=FF2C2C&text_color=E6EDF3&exclude_repo=github-readme-stats,chevasatrio.github.io&cache_seconds=1&_=$(date +%s)" \
-            "assets/top-langs.svg" "Top Languages"
-
-      - name: Ambil kartu Trophy
+      - name: Trophy
+        continue-on-error: true
         run: |
           ./fetch_safe.sh \
             "https://github-trophies.vercel.app/?username=chevasatrio&theme=darkhub&no-frame=true&no-bg=true&margin-w=8&column=7" \
             "assets/trophy.svg" "Trophy"
 
-      - name: Ambil Activity Graph
-        run: |
-          ./fetch_safe.sh \
-            "https://github-readme-activity-graph.vercel.app/graph?username=chevasatrio&theme=github-dark&bg_color=0D1117&color=FF2C2C&line=FF2C2C&point=ffffff&hide_border=true" \
-            "assets/activity-graph.svg" "Activity Graph"
-
-      - name: Ambil kartu Streak
+      - name: Streak
+        continue-on-error: true
         run: |
           ./fetch_safe.sh \
             "https://streak-stats.demolab.com?user=chevasatrio&theme=github-dark-blue&hide_border=true&background=0D1117&ring=FF2C2C&fire=FF2C2C&currStreakLabel=FF2C2C&locale=id&short_numbers=true&mode=weekly" \
             "assets/streak.svg" "Streak"
 
+      # always(): tetap commit apa pun hasil step di atas
       - name: Commit & push jika ada perubahan
+        if: always()
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: update stats cards [automated]"
+          commit_message: "chore: update profile cards [automated]"
           file_pattern: "assets/*.svg"
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "41898282+github-actions[bot]@users.noreply.github.com"
 
   update-snake:
     runs-on: ubuntu-latest
